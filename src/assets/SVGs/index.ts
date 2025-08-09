@@ -1,9 +1,10 @@
-export { default as LogoIcon } from "./C.svg"
+export { default as LogoIcon } from "./Logo.svg"
 export { default as PurpleWave } from "./purpleWave.svg"
 export { default as ContactArt } from "./ContactVector.svg"
 
 //Social Icons
 export { default as GithubIcon } from "./Github.svg"
+export { default as BehanceIcon } from "./Behanxe.svg"
 export { default as GoogleIcon } from "./Google.svg"
 export { default as GmailIcon } from "./Gmail.svg"
 export { default as InstagramIcon } from "./Instagram.svg"
