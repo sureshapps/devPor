@@ -43,7 +43,7 @@ import {
     AdobeAIIcon,
     AdobeAEIcon,
     CanvaIcon,
-    CapcutIcon
+    CapCutIcon
     
 } from "../assets/Icons";
 import { GithubIcon } from "../assets/SVGs";
@@ -143,19 +143,16 @@ export const ProgrammingStack = [
 export const GraphicDesignStack = [
     { name: "Photoshop", icon: AdobePSIcon, link: "https://www.adobe.com/my_en/products/photoshop.html" },
     { name: "Illustrator", icon: AdobeAIIcon, link: "https://www.adobe.com/my_en/products/photoshop.html" },
-        name: "Premiere Pro",
+    {    name: "Premiere Pro",
         icon: AdobePRIcon,
-        link: "https://www.adobe.com/my_en/products/photoshop.html/",
-    },
-        name: "CapCut",
-        icon: CapcutIcon,
-        link: "https://capcut.com",
-    },
+        link: "https://www.adobe.com/my_en/products/photoshop.html/" },
+    {    name: "CapCut",
+        icon: CapCutIcon,
+        link: "https://www.capcut.com" },
     {
         name: "Canva",
         icon: CanvaIcon,
-        link: "https://canva.com/",
-    },
+        link: "https://www.canva.com/" },
 ];
 
 
