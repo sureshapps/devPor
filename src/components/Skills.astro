@@ -3,6 +3,7 @@ import { CenterTitle, SkillTitle, SkillGrid } from "./UI";
 import {
     FrontendStack,
     BackendStack,
+    GraphicDesignStack,
     ProgrammingStack,
     ToolsStack,
 } from "../utils/SkillStack";
@@ -29,7 +30,17 @@ import {
         </div>
     </div>
 
-    <div class="flex justify-center items-start flex-col lg:flex-row gap-2">
+        <div
+            class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
+        >
+            <SkillTitle title="Gaphic-Design" color="primary" />
+            <SkillGrid stack={GraphicDesignStack} />
+        </div>
+    </div>
+
+
+
+<div class="flex justify-center items-start flex-col lg:flex-row gap-2">
         <div
             class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
         >
