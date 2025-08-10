@@ -44,3 +44,11 @@ export { default as NetlifyIcon } from "./netlify.svg"
 export { default as VercelIcon } from "./vercel.svg"
 export { default as VsCodeIcon } from "./vscode.svg"
 export { default as FigmaIcon } from "./figma.svg"
+
+// Graphic-Design
+export { default as AdobePSIcon } from "./AdobePS.svg"
+export { default as AdobeAEIcon } from "./AdobeAE.svg"
+export { default as AdobeAIIcon } from "./AdobeAI.svg"
+export { default as AdobePRIcon } from "./AdobePR.svg"
+export { default as CanvaIcon } from "./Canva.svg"
+export { default as CapcutIcon } from "./Capcut.svg"
