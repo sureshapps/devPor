@@ -140,7 +140,7 @@ export const ProgrammingStack = [
 ];
 
 
-export const Graphicdesign = [
+export const GraphicDesignStack = [
     { name: "Photoshop", icon: AdobePSIcon, link: "https://www.adobe.com/my_en/products/photoshop.html" },
     { name: "Illustrator", icon: AdobeAIIcon, link: "https://www.adobe.com/my_en/products/photoshop.html" },
         name: "Premiere Pro",
