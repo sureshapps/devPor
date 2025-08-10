@@ -37,7 +37,14 @@ import {
     GSAPIcon,
     FramerMotionIcon,
     BunIcon,
-    RIcon
+    RIcon,
+    AdobePSIcon,
+    AdobePRIcon,
+    AdobeAIIcon,
+    AdobeAEIcon,
+    CanvaIcon,
+    CapcutIcon
+    
 } from "../assets/Icons";
 import { GithubIcon } from "../assets/SVGs";
 
@@ -128,10 +135,29 @@ export const ProgrammingStack = [
         link: "https://www.typescriptlang.org/",
     },
     { name: "Python", icon: PythonIcon, link: "https://www.python.org/" },
-    { name: "C++", icon: CppIcon, link: "https://isocpp.org/" },
-    { name: "Java", icon: JavaIcon, link: "https://www.oracle.com/java/" },
-    { name: "R", icon: RIcon, link: "https://www.r-project.org/" },
+
+    { name: "Java", icon: JavaIcon, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
 ];
+
+
+export const Graphicdesign = [
+    { name: "Photoshop", icon: AdobePSIcon, link: "https://www.adobe.com/my_en/products/photoshop.html" },
+    { name: "Illustrator", icon: AdobeAIIcon, link: "https://www.adobe.com/my_en/products/photoshop.html" },
+        name: "Premiere Pro",
+        icon: AdobePRIcon,
+        link: "https://www.adobe.com/my_en/products/photoshop.html/",
+    },
+        name: "CapCut",
+        icon: CapcutIcon,
+        link: "https://capcut.com",
+    },
+    {
+        name: "Canva",
+        icon: CanvaIcon,
+        link: "https://canva.com/",
+    },
+];
+
 
 export const ToolsStack = [
     { name: "NPM", icon: NpmIcon, link: "https://www.npmjs.com/" },
