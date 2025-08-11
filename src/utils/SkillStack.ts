@@ -121,6 +121,10 @@ export const GraphicDesignStack = [
     {    name: "Premiere Pro",
         icon: AdobePRIcon,
         link: "https://www.adobe.com/my_en/products/photoshop.html/" },
+
+       {    name: "After Effects",
+        icon: AdobeAEIcon,
+        link: "https://www.adobe.com/my_en/products/photoshop.html/" },
     {    name: "CapCut",
         icon: CapCutIcon,
         link: "https://www.capcut.com" },
