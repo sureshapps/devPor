@@ -76,65 +76,40 @@ export const FrontendStack = [
     {
         name: "TS Query",
         icon: ReactQueryIcon,
-        link: "https://tanstack.com/query/latest/",
+        link: "https://tanstack.com/query/latest/"
     },
-    { name: "GSAP", icon: GSAPIcon, link: "https://gsap.com/" },
-    { name: "Motion", icon: FramerMotionIcon, link: "https://www.framer.com/motion/" },
-    { name: "Redux", icon: ReduxIcon, link: "https://redux.js.org/" },
-    {
-        name: "Zustand",
-        icon: ZustandIcon,
-        link: "https://zustand-demo.pmnd.rs/",
-    },
-    { name: "D3.js", icon: D3JsIcon, link: "https://d3js.org/" },
-    { name: "Preact.js", icon: PreactIcon, link: "https://preactjs.com/" },
-    {
-        name: "Nanostores",
-        icon: NanostoresIcon,
-        link: "https://github.com/nanostores/nanostores",
-    },
+
 ];
 export const BackendStack = [
     { name: "Node.js", icon: NodeIcon, link: "https://nodejs.org/" },
-    { name: "Express.js", icon: ExpressIcon, link: "https://expressjs.com/" },
-    { name: "MongoDB", icon: MongoIcon, link: "https://www.mongodb.com/" },
-    {
+{
         name: "Firebase",
         icon: FirebaseIcon,
-        link: "https://firebase.google.com/",
-    },
-    { name: "Edge Store", icon: EdgeStoreIcon, link: "https://edgestore.dev/" },
+        link: "https://firebase.google.com/"   },
+
     { name: "MySQL", icon: MysqlIcon, link: "https://www.mysql.com/" },
     { name: "PHP", icon: PhpIcon, link: "https://www.php.net/" },
     {
         name: "REST API",
         icon: RestApiIcon,
-        link: "https://developer.mozilla.org/en-US/docs/Glossary/REST",
-    },
+        link: "https://developer.mozilla.org/en-US/docs/Glossary/REST" },
     {
         name: "Drive API",
         icon: GdriveIcon,
-        link: "https://developers.google.com/drive",
-    },
-    {
-        name: "Auth.js",
-        icon: NextAuthIcon,
-        link: "https://authjs.dev/",
-    },
+        link: "https://developers.google.com/drive"  },
+
 ];
 
 export const ProgrammingStack = [
     {
         name: "JavaScript",
         icon: JsIcon,
-        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    },
+        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"  },
     {
         name: "TypeScript",
         icon: TsIcon,
-        link: "https://www.typescriptlang.org/",
-    },
-    { name: "Python", icon: PythonIcon, link: "https://www.python.org/" },
+        link: "https://www.typescriptlang.org/" },
+
 
     { name: "Java", icon: JavaIcon, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
 ];
@@ -158,11 +133,11 @@ export const GraphicDesignStack = [
 
 export const ToolsStack = [
     { name: "NPM", icon: NpmIcon, link: "https://www.npmjs.com/" },
-    { name: "Bun", icon: BunIcon, link: "https://bun.sh/" },
+
     { name: "Git", icon: GitIcon, link: "https://git-scm.com/" },
     { name: "GitHub", icon: GithubIcon, link: "https://github.com/" },
     { name: "Vite.js", icon: ViteIcon, link: "https://vitejs.dev/" },
-    { name: "Socket.io", icon: SocketIoIcon, link: "https://socket.io/" },
+
     { name: "Netlify", icon: NetlifyIcon, link: "https://www.netlify.com/" },
     { name: "Vercel", icon: VercelIcon, link: "https://vercel.com/" },
     {
