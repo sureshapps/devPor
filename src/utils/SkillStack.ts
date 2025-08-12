@@ -147,7 +147,6 @@ export const ToolsStack = [
     {
         name: "VS Code",
         icon: VsCodeIcon,
-        link: "https://code.visualstudio.com/",
-    },
+        link: "https://code.visualstudio.com/" },
     { name: "Figma", icon: FigmaIcon, link: "https://www.figma.com/" },
 ];
