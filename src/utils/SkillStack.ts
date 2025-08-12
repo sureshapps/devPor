@@ -117,14 +117,14 @@ export const ProgrammingStack = [
 
 export const GraphicDesignStack = [
     { name: "Photoshop", icon: AdobePSIcon, link: "https://www.adobe.com/my_en/products/photoshop.html" },
-    { name: "Illustrator", icon: AdobeAIIcon, link: "https://www.adobe.com/my_en/products/photoshop.html" },
+    { name: "Illustrator", icon: AdobeAIIcon, link: "https://www.adobe.com/my_en/products/illustrator.html" },
     {    name: "Premiere Pro",
         icon: AdobePRIcon,
-        link: "https://www.adobe.com/my_en/products/photoshop.html/" },
+        link: "https://www.adobe.com/my_en/products/premiere.html/" },
 
        {    name: "After Effects",
         icon: AdobeAEIcon,
-        link: "https://www.adobe.com/my_en/products/photoshop.html/" },
+        link: "https://www.adobe.com/my_en/products/aftereffects.html/" },
     {    name: "CapCut",
         icon: CapCutIcon,
         link: "https://www.capcut.com" },
@@ -138,9 +138,9 @@ export const GraphicDesignStack = [
 export const ToolsStack = [
     { name: "NPM", icon: NpmIcon, link: "https://www.npmjs.com/" },
 
-    { name: "Git", icon: GitIcon, link: "https://git-scm.com/" },
+
     { name: "GitHub", icon: GithubIcon, link: "https://github.com/" },
-    { name: "Vite.js", icon: ViteIcon, link: "https://vitejs.dev/" },
+  ,
 
     { name: "Netlify", icon: NetlifyIcon, link: "https://www.netlify.com/" },
     { name: "Vercel", icon: VercelIcon, link: "https://vercel.com/" },
