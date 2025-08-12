@@ -140,7 +140,7 @@ export const ToolsStack = [
 
 
     { name: "GitHub", icon: GithubIcon, link: "https://github.com/" },
-  ,
+  
 
     { name: "Netlify", icon: NetlifyIcon, link: "https://www.netlify.com/" },
     { name: "Vercel", icon: VercelIcon, link: "https://vercel.com/" },
