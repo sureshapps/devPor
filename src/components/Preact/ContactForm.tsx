@@ -19,30 +19,35 @@ const ContactForm = () => {
 
         if (!NameRef.current || !EmailRef.current || !MessageRef.current) return
 
-        const name = NameRef?.current?.value as string;
-        const email = EmailRef?.current?.value as string;
-        const message = MessageRef?.current?.value as string;
+        const name = NameRef.current.value
+        const email = EmailRef.current.value
+        const message = MessageRef.current.value
+
+        // Add your receiver email here
+        const receiverEmail = "receiver@example.com"
 
         const templateParams = {
             from_name: name,
             from_email: email,
+            to_email: receiverEmail, // dynamic receiver
             message: message,
         }
 
         try {
-
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
             if (!emailRegex.test(email)) {
                 throw new Error('🙄 Invalid Email ID!')
             }
 
             setisLoading(true)
+
+            // Direct values instead of import.meta.env
             const mailRes = await emailjs.send(
-                import.meta.env.PUBLIC_EMAILJS_SERVICE_ID,
-                import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID,
+                "service_sureshksapp",     // your service ID
+                "template_sureshapp",      // your template ID
                 templateParams,
-                import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY
-            );
+                "JhUYWI_fdQ0bfdICH"        // your public key
+            )
 
             if (mailRes.status !== 200) {
                 throw new Error("😵 Message not Sent")
@@ -59,16 +64,13 @@ const ContactForm = () => {
         } finally {
             setTimeout(() => {
                 setMailStatus({ status: false, message: "" })
-            }, 3000);
+            }, 3000)
         }
     }
 
     return (
         <form onSubmit={HandleFormSubmit} className="Fade_Up bg-LinkBtnGradient rounded-md w-full lg:max-w-[650px] px-4 py-2 outline outline-1 outline-white/20 flex_center flex-col">
-            <label
-                htmlFor="name"
-                className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
-            >
+            <label htmlFor="name" className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2">
                 Name
                 <input
                     type="text"
@@ -76,14 +78,12 @@ const ContactForm = () => {
                     name="name"
                     placeholder="Enter your Name"
                     className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground"
-                    autoComplete='name'
+                    autoComplete="name"
                     required
-                    ref={NameRef} />
+                    ref={NameRef}
+                />
             </label>
-            <label
-                htmlFor="email"
-                className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
-            >
+            <label htmlFor="email" className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2">
                 Email
                 <input
                     type="email"
@@ -91,14 +91,12 @@ const ContactForm = () => {
                     name="email"
                     placeholder="example@gmail.com"
                     className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground"
-                    autoComplete='email'
+                    autoComplete="email"
                     required
-                    ref={EmailRef} />
+                    ref={EmailRef}
+                />
             </label>
-            <label
-                htmlFor="message"
-                className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
-            >
+            <label htmlFor="message" className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2">
                 Message
                 <textarea
                     rows={5}
@@ -106,7 +104,8 @@ const ContactForm = () => {
                     name="message"
                     placeholder="Enter your Message"
                     className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground resize-none"
-                    ref={MessageRef} />
+                    ref={MessageRef}
+                />
             </label>
 
             <div className="w-full flex justify-start items-center gap-4">
