@@ -4,7 +4,7 @@ const ContactForm = () => {
     return (
         <form
             className="Fade_Up bg-LinkBtnGradient rounded-md w-full lg:max-w-[650px] px-4 py-4 outline outline-1 outline-white/20 flex_center flex-col"
-            action="https://hello.suresh.app/db/submit.php"
+            action="https://suresh.app/devct/submit.php"
             method="post"
         >
             {/* Name */}
