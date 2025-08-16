@@ -28,7 +28,7 @@ const ContactForm = () => {
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="example@gmail.com"
+                    placeholder="example@mail.com"
                     className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground"
                     autoComplete="email"
                     required
