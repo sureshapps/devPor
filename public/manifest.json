@@ -3,24 +3,24 @@
     "name": "Suresh | Portfolio",
     "icons": [
         {
-            "src": "./Icons/144.png",
+            "src": "https://raw.githubusercontent.com/sureshapps/devPor/refs/heads/main/public/ksicon.png",
             "sizes": "144x144",
             "type": "image/png",
             "purpose": "maskable"
         },
         {
-            "src": "./Icons/192.png",
+            "src": "https://raw.githubusercontent.com/sureshapps/devPor/refs/heads/main/public/ksicon.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "./Icons/384.png",
+            "src": "https://raw.githubusercontent.com/sureshapps/devPor/refs/heads/main/public/ksicon.png",
             "sizes": "384x384",
             "type": "image/png"
         },
         {
-            "src": "./Icons/512.png",
+            "src": "https://raw.githubusercontent.com/sureshapps/devPor/refs/heads/main/public/ksicon.png",
             "sizes": "512x512",
             "type": "image/png"
         }
