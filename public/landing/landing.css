@@ -130,7 +130,7 @@ margin-top: 500px;
 /*Hero*/
 
 .hero {
-    background: url('https://raw.githubusercontent.com/sureshapps/devPor/refs/heads/main/public/home.webp') no-repeat;
+    background: url('home.webp') no-repeat;
     background-size: cover;
     background-position: top center;
     margin-top: 0px;
