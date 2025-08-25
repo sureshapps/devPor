@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta id="extViewportMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+ 
+
+    <title>suresh.app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="landing.css">
+    <link rel="icon" href="ksicon.png">
+        <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden
+        }
+    </style>
+    
+
+</head>
+<body>
+    <script>
+        document.body.addEventListener('touchmove', function(event) {
+            event.preventDefault();
+        }, {
+            passive: false,
+            useCapture: false
+        });
+ 
+        window.onresize = function() {
+            $(document.body).width(window.innerWidth).height(window.innerHeight);
+        }
+ 
+        $(function() {
+            window.onresize();
+        });
+    </script>
+
+    <main>
+        <article>
+            <section class="hero" id="hero">
+                
+
+
+
+    <canvas class="fireworks" id="particles" width="1000" height="400"></canvas>
+    <div class="button">
+        <a href="https://dev.suresh.app">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+Glow In <svg width="15" height="15" viewBox="0 0 36 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12h14M12 5l7 7-7 7"/>
+</svg>
+
+        </a>
+    </div>
+ <div class="h1">Design.codes</div>                  
+                
+            </section>
+     </article>
+     
+
+    </main>
+
+
+
+
+
+
+    
+  <script  src="particles.js"></script>
+  <script  src="fireworks.js"></script>
+    
+</body>
+</html>
