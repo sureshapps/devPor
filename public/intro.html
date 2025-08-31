@@ -87,12 +87,6 @@
 </head>
 <body>
   <div id="portalCard">
-    <div class="gooey-effect">
-      <div class="gooey-blob"></div>
-      <div class="gooey-blob"></div>
-      <div class="gooey-blob"></div>
-      <div class="gooey-blob"></div>
-    </div>
     <div id="portalContent">
       <h1>ENTER<br>MY TUNNEL</h1>
       <button id="portalButton">GO</button>
@@ -106,11 +100,17 @@
 
   <div id="flashOverlay"></div>
 
+  <!-- Portal whoosh sound -->
+  <audio id="portalSound" preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2021/09/16/audio_74c6f30b0d.mp3?filename=portal-whoosh-101soundboards.mp3" type="audio/mpeg">
+  </audio>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
     const button = document.getElementById("portalButton");
     const card = document.getElementById("portalCard");
     const tunnelContainer = document.getElementById("tunnelContainer");
+    const portalSound = document.getElementById("portalSound");
 
     let scene, camera, renderer, path, tube, lights = [], pct = 0, pct2 = 0;
     let cameraSpeed = 0.0025, lightSpeed = 0.005;
@@ -150,8 +150,33 @@
       }
     }
 
+    function pulseLights(duration = 1000) {
+      const start = performance.now();
+      function animatePulse(now) {
+        const elapsed = now - start;
+        const progress = elapsed / duration;
+        const intensity = 2 + Math.sin(progress * Math.PI * 6) * 3; // 6 quick pulses
+        lights.forEach(light => {
+          light.intensity = Math.max(0.5, intensity);
+        });
+        if (elapsed < duration) {
+          requestAnimationFrame(animatePulse);
+        }
+      }
+      requestAnimationFrame(animatePulse);
+    }
+
     function triggerFlashAndRedirect() {
       const overlay = document.getElementById("flashOverlay");
+
+      // Play whoosh sound
+      portalSound.currentTime = 0;
+      portalSound.play();
+
+      // Pulse tunnel lights with sound
+      pulseLights(1200);
+
+      // Flash white
       overlay.classList.add("flash");
       setTimeout(() => {
         overlay.classList.remove("flash");
