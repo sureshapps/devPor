@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyberspace Portal 🚪🌀</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Unica One', sans-serif;
+      background: black;
+      color: white;
+    }
+
+    #portalCard {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 400px;
+      background: rgba(20, 20, 30, 0.95);
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
+      z-index: 10;
+      padding: 20px;
+    }
+
+    #portalCard h1 {
+      font-size: 2em;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      color: cyan;
+      text-shadow: 0 0 10px cyan;
+    }
+
+    #portalButton {
+      font-size: 1.5em;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 10px;
+      background: cyan;
+      color: black;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    #portalButton:hover {
+      transform: scale(1.1);
+    }
+
+    #tunnelContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      display: none;
+    }
+
+    #tunnelCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    #flashOverlay {
+      position: fixed;
+      inset: 0;
+      background: black;
+      opacity: 0;
+      z-index: 9999;
+      pointer-events: none;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    #flashOverlay.flash {
+      background: white;
+      opacity: 1;
+      transition: opacity 0.15s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="portalCard">
+    <div class="gooey-effect">
+      <div class="gooey-blob"></div>
+      <div class="gooey-blob"></div>
+      <div class="gooey-blob"></div>
+      <div class="gooey-blob"></div>
+    </div>
+    <div id="portalContent">
+      <h1>ENTER<br>MY TUNNEL</h1>
+      <button id="portalButton">GO</button>
+    </div>
+    <canvas class="card-bg" id="cardBgEffect"></canvas>
+  </div>
+
+  <div id="tunnelContainer">
+    <canvas id="tunnelCanvas"></canvas>
+  </div>
+
+  <div id="flashOverlay"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    const button = document.getElementById("portalButton");
+    const card = document.getElementById("portalCard");
+    const tunnelContainer = document.getElementById("tunnelContainer");
+
+    let scene, camera, renderer, path, tube, lights = [], pct = 0, pct2 = 0;
+    let cameraSpeed = 0.0025, lightSpeed = 0.005;
+    let renderFrameId;
+
+    button.addEventListener("click", () => {
+      card.style.display = "none";
+      tunnelContainer.style.display = "block";
+      initTunnel();
+      render();
+    });
+
+    function initTunnel() {
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
+      renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("tunnelCanvas"), antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+      const points = [];
+      for (let i = 0; i < 50; i++) {
+        points.push(new THREE.Vector3(Math.sin(i * 0.3) * 5, Math.cos(i * 0.3) * 5, i * 2));
+      }
+      path = new THREE.CatmullRomCurve3(points);
+      const geometry = new THREE.TubeGeometry(path, 200, 2, 16, false);
+      const material = new THREE.MeshStandardMaterial({ color: 0x00ffff, side: THREE.BackSide, metalness: 0.7, roughness: 0.3 });
+      tube = new THREE.Mesh(geometry, material);
+      scene.add(tube);
+
+      const mainLight = new THREE.PointLight(0xffffff, 2, 20);
+      lights.push(mainLight);
+      scene.add(mainLight);
+
+      for (let i = 0; i < 10; i++) {
+        const pointLight = new THREE.PointLight(0xff00ff, 2, 10);
+        lights.push(pointLight);
+        scene.add(pointLight);
+      }
+    }
+
+    function triggerFlashAndRedirect() {
+      const overlay = document.getElementById("flashOverlay");
+      overlay.classList.add("flash");
+      setTimeout(() => {
+        overlay.classList.remove("flash");
+        overlay.style.opacity = "1"; 
+        overlay.style.background = "black";
+        setTimeout(() => {
+          window.location.href = "https://landing.suresh.app";
+        }, 600);
+      }, 250);
+    }
+
+    function render() {
+      pct += cameraSpeed;
+      if (pct >= 0.995) pct = 0;
+      pct2 += lightSpeed;
+      if (pct2 >= 0.995) pct2 = 0;
+
+      const pt1 = path.getPointAt(pct);
+      const pt2 = path.getPointAt(Math.min(pct + 0.01, 0.995));
+      camera.position.set(pt1.x, pt1.y, pt1.z);
+      camera.lookAt(pt2);
+
+      const mainLight = lights[0];
+      mainLight.position.set(pt2.x, pt2.y, pt2.z);
+
+      for (let i = 1; i < lights.length; i++) {
+        const offset = ((i * 13) % 17) / 20;
+        const lightPct = (pct2 + offset) % 0.995;
+        const pos = path.getPointAt(lightPct);
+        lights[i].position.set(pos.x, pos.y, pos.z);
+      }
+
+      renderer.render(scene, camera);
+
+      if (pct < 0.985) {
+        renderFrameId = requestAnimationFrame(render);
+      } else {
+        triggerFlashAndRedirect();
+      }
+    }
+  </script>
+</body>
+</html>
