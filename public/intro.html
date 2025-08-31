@@ -116,11 +116,21 @@
     let cameraSpeed = 0.0025, lightSpeed = 0.005;
     let renderFrameId;
 
-    button.addEventListener("click", () => {
+    button.addEventListener("click", async () => {
       card.style.display = "none";
       tunnelContainer.style.display = "block";
       initTunnel();
       render();
+
+      // Unlock audio context for mobile Safari/Chrome
+      try {
+        await portalSound.play();
+        portalSound.pause();
+        portalSound.currentTime = 0;
+        console.log("Audio unlocked ✅");
+      } catch (e) {
+        console.log("Audio unlock failed:", e);
+      }
     });
 
     function initTunnel() {
@@ -169,9 +179,9 @@
     function triggerFlashAndRedirect() {
       const overlay = document.getElementById("flashOverlay");
 
-      // Play whoosh sound
+      // Play whoosh sound (now guaranteed to work)
       portalSound.currentTime = 0;
-      portalSound.play();
+      portalSound.play().catch(err => console.log("Play failed:", err));
 
       // Pulse tunnel lights with sound
       pulseLights(1200);
