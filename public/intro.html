@@ -1,116 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyberspace Portal 🚪🌀</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta id="extViewportMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>suresh.app</title>
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&display=swap");
+
+    * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
-      margin: 0;
-      overflow: hidden;
-      font-family: 'Unica One', sans-serif;
-      background: black;
+      font-family: "Share Tech Mono", monospace;
+      background-color: #06070B;
       color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
     }
 
-    #portalCard {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 300px;
-      height: 400px;
-      background: rgba(20, 20, 30, 0.95);
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
-      z-index: 10;
-      padding: 20px;
-    }
 
-    #portalCard h1 {
-      font-size: 2em;
-      margin-top: 40px;
-      margin-bottom: 30px;
-      color: cyan;
-      text-shadow: 0 0 10px cyan;
-    }
 
-    #portalButton {
-      font-size: 1.5em;
-      padding: 10px 30px;
-      border: none;
-      border-radius: 10px;
-      background: cyan;
-      color: black;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
 
-    #portalButton:hover {
-      transform: scale(1.1);
-    }
 
-    #tunnelContainer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-      display: none;
-    }
-
-    #tunnelCanvas {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-
+    /* Flash overlay for redirect */
     #flashOverlay {
       position: fixed;
-      inset: 0;
-      background: black;
-      opacity: 0;
-      z-index: 9999;
-      pointer-events: none;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    #flashOverlay.flash {
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: white;
-      opacity: 1;
-      transition: opacity 0.15s ease-in-out;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
     }
+    #flashOverlay.flash { opacity: 1; }
+
+    #tunnelContainer {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: black;
+      z-index: 999;
+    }
+    #tunnelCanvas { width: 100%; height: 100%; display: block; }
+
+
+.container {
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+	justify-content: center;
+	max-width: 1000px;
+	padding: 0rem;
+	perspective: 1000px;
+	flex-wrap: wrap;
+}
+
+.card {
+	position: relative;
+
+	background-color: #06070B;
+	padding: 1.5rem;
+	width: 320px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	transition: all 0.4s ease;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #06070B;
+	opacity: 0;
+	transition: opacity 0.4s;
+	z-index: -1;
+}
+
+.card::after {
+	content: "";
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+		background-color: #06070B;
+	z-index: -2;
+	animation: scanlines 4s linear infinite;
+}
+
+.card:hover {
+	transform: translateY(-10px);
+}
+
+.card:hover::before {
+
+}
+
+.card-photo img {
+	width: 100%;
+	margin-top: -4rem;
+	
+}
+
+.card-photo:hover img {
+
+}
+
+.card h1,
+.card h2,
+.card h3 {
+	font-family: "Orbitron", sans-serif;
+	position: relative;
+	margin-bottom: 1rem;
+	color: #ffffff;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.card h2 {
+	font-size: 1.6rem;
+	color: #1F51FF;
+	text-shadow: 0 0 5px rgba(5, 217, 232, 0.7);
+}
+
+.card h1 {
+	font-size: 1.5rem;
+	color: #FF46A2;
+	text-shadow: 0 0 5px rgba(255, 42, 109, 0.7);
+}
+
+.card h3 {
+	font-size: 1.1rem;
+	color: var(--cyber-yellow);
+}
+
+.card p {
+	margin-bottom: 1.5rem;
+	font-size: 0.95rem;
+	line-height: 1.5;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.read-more {
+	display: inline-block;
+	padding: 8px 20px;
+	border: 1px solid #FF46A2;
+	color: #FF46A2;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: "Orbitron", sans-serif;
+	font-size: 0.8rem;
+	font-weight: bold;
+	letter-spacing: 1px;
+	background: transparent;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.3s;
+	align-self: flex-start;
+}
+
+.read-more::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255,70,162, 0.4),
+		transparent
+	);
+	transition: left 0.3s;
+}
+
+.card-photo .read-more:hover {
+	background-color: rgba(255,70,162, 0.4);
+	box-shadow: 0 0 10px rgba(255,70,162, 0.5);
+	color: #FF46A2;
+}
+
+.card-photo .read-more:hover::before {
+	left: 100%;
+	transition: left 0.5s ease;
+}
+
+.card-photo .read-more {
+	border-color: #FF46A2;
+	color: #ffffff;
+}
+
+.card-text .read-more::before {
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 42, 109, 0.4),
+		transparent
+	);
+}
+
+.card-text .read-more:hover {
+	background-color: rgba(255,247,0, 0.5);
+	box-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+	color: #FF46A2;
+}
+
+.card-text .read-more:hover::before {
+	left: 100%;
+	transition: left 0.5s ease;
+}
+
+.card-text .read-more {
+	border-color: #FF46A2;
+	color: #FF46A2;
+}
+
+.glitch {
+	position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.glitch::before {
+	left: 2px;
+	color: var(--neon-blue);
+	animation: glitch-animation 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+	left: -2px;
+	color: #FF46A2;
+	animation: glitch-animation 2s infinite linear alternate-reverse;
+}
+
+/* Cyber grid background for text card */
+.card-text {
+	background-image: radial-gradient(rgba(5, 217, 232, 0.1) 1px, transparent 1px);
+	background-size: 20px 20px;
+}
+
+/* Digital noise overlay */
+.card::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.03;
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* Animations */
+@keyframes glitch-animation {
+	0% {
+		opacity: 0;
+		transform: translate(0);
+	}
+	20% {
+		opacity: 0;
+	}
+	2% {
+		opacity: 0.8;
+	}
+	2.1% {
+		opacity: 0;
+	}
+	80% {
+		opacity: 0;
+	}
+	80.1% {
+		opacity: 0.4;
+	}
+	81% {
+		opacity: 0;
+	}
+	99% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.5;
+		transform: translate(0);
+	}
+}
+
+@keyframes scanlines {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(50%);
+	}
+}
   </style>
 </head>
 <body>
-  <div id="portalCard">
-    <div id="portalContent">
-      <h1>ENTER<br>MY TUNNEL</h1>
-      <button id="portalButton">GO</button>
+  <!-- Portal card -->
+  <div id="portalCard" class="container">
+    <div class="card card-photo">
+      <img src="neon.jpeg" alt="Card image">
+      <h1 class="glitch" data-text="SYSTEM FAILURE">Digital Skyline</h1>
+      <p>Step Into A Digital Skyline Of Neon Light & Endless Code. Where Creativity Pulses Like Electricity Through The Grid.</p>
+      <button id="portalButton" class="read-more">ENTER</button>
     </div>
-    <canvas class="card-bg" id="cardBgEffect"></canvas>
   </div>
 
+  <!-- Tunnel -->
   <div id="tunnelContainer">
     <canvas id="tunnelCanvas"></canvas>
   </div>
 
+  <!-- Flash overlay -->
   <div id="flashOverlay"></div>
 
-  <!-- Portal whoosh sound -->
-  <audio id="portalSound" preload="auto">
-    <source src="https://cdn.pixabay.com/download/audio/2021/09/16/audio_74c6f30b0d.mp3?filename=portal-whoosh-101soundboards.mp3" type="audio/mpeg">
-  </audio>
+  <!-- Sound -->
+  <audio id="portalSound" src="portal.mp3" preload="auto"></audio>
 
+  <!-- Three.js + tunnel script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
     const button = document.getElementById("portalButton");
     const card = document.getElementById("portalCard");
     const tunnelContainer = document.getElementById("tunnelContainer");
     const portalSound = document.getElementById("portalSound");
+    const overlay = document.getElementById("flashOverlay");
 
     let scene, camera, renderer, path, tube, lights = [], pct = 0, pct2 = 0;
     let cameraSpeed = 0.0025, lightSpeed = 0.005;
@@ -122,12 +356,10 @@
       initTunnel();
       render();
 
-      // Unlock audio context for mobile Safari/Chrome
       try {
         await portalSound.play();
         portalSound.pause();
         portalSound.currentTime = 0;
-        console.log("Audio unlocked ✅");
       } catch (e) {
         console.log("Audio unlock failed:", e);
       }
@@ -165,32 +397,24 @@
       function animatePulse(now) {
         const elapsed = now - start;
         const progress = elapsed / duration;
-        const intensity = 2 + Math.sin(progress * Math.PI * 6) * 3; // 6 quick pulses
+        const intensity = 2 + Math.sin(progress * Math.PI * 6) * 3;
         lights.forEach(light => {
           light.intensity = Math.max(0.5, intensity);
         });
-        if (elapsed < duration) {
-          requestAnimationFrame(animatePulse);
-        }
+        if (elapsed < duration) requestAnimationFrame(animatePulse);
       }
       requestAnimationFrame(animatePulse);
     }
 
     function triggerFlashAndRedirect() {
-      const overlay = document.getElementById("flashOverlay");
-
-      // Play whoosh sound (now guaranteed to work)
       portalSound.currentTime = 0;
       portalSound.play().catch(err => console.log("Play failed:", err));
-
-      // Pulse tunnel lights with sound
       pulseLights(1200);
 
-      // Flash white
       overlay.classList.add("flash");
       setTimeout(() => {
         overlay.classList.remove("flash");
-        overlay.style.opacity = "1"; 
+        overlay.style.opacity = "1";
         overlay.style.background = "black";
         setTimeout(() => {
           window.location.href = "https://landing.suresh.app";
