@@ -247,11 +247,7 @@ export const ProjectsList: ProjectsListType = [
         ],
         hideProject: false,
         LogoSize: 50,
-        versions: [
-            { title: "ARMS v3", version: "3" },
-            { title: "ARMS v2", version: "2" },
-            { title: "ARMS v1", version: "1" },
-        ]
+        versions: []
     },
     {
         Name: "Vortexa",
