@@ -3,15 +3,15 @@ import {
 } from "../assets/Icons"
 
 import {
-    NextmartLogo, ArmsLogo, ArmsPhpLogo, ClimateLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo, PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo, VortexaLogo
+    NextmartLogo, LifeLogo, ArmsPhpLogo, ClimateLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo, PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo, VortexaLogo
 } from "../assets/Logos"
 
 import {
-    NextmartShots, Armsv1Shots, Armsv2Shots, ClimateShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots, VortexaShots, Armsv3Shots
+    NextmartShots, Armsv1Shots, Armsv2Shots, ClimateShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots, VortexaShots, LifeShots
 } from "../assets/Shots"
 
 import {
-    ARMSv1Mockup, ARMSv2Mockup, ARMSv3Mockup, ClimateMockup, DaysbeyondMockup, SrinivasMockup, VortexaMockup, XreconMockup, YoatubeMockup
+    ARMSv1Mockup, ARMSv2Mockup, LifeMockup, ClimateMockup, DaysbeyondMockup, SrinivasMockup, VortexaMockup, XreconMockup, YoatubeMockup
 } from "../assets/Mockup"
 
 
@@ -211,9 +211,9 @@ export const ProjectsList: ProjectsListType = [
         Name: "Life Meter",
         ShortDesc: "Discover Your Estimated Lifespan Based On Your Current Age",
         Desc: "Life expectancy is the average remaining age (years) for a person is expected to live at the beginning of a certain time, assuming the mortality rate of a certain age is the same throughout his or her lifetime. The Life expectancy calculator is an interactive tool provided for user to measure the average life expectancy based on factors such as birth year.",
-        Logo: ArmsLogo,
-        Shot: Armsv3Shots,
-        Mockup: ARMSv3Mockup,
+        Logo: LifeLogo,
+        Shot: LifeShots,
+        Mockup: LifeMockup,
         Theme: "#FFF",
         Status: "completed",
         Link: "https://lifemeter.suresh.app/",
@@ -221,8 +221,8 @@ export const ProjectsList: ProjectsListType = [
         Tech: [TechInfo.Next, TechInfo.TypeScript, TechInfo.TailwindCSS, TechInfo.HTML, TechInfo.JavaScript, TechInfo.PHP],
         features: [
             {
-                title: "Anonymous Login",
-                description: "Students can conveniently  log in anonymously to browse and access study materials."
+                title: "Clear Result",
+                description: "Estimated Life Expectancy (Years) – Clear number result (e.g., “Your estimated life expectancy: 82 years”).."
             },
 
           
@@ -231,16 +231,8 @@ export const ProjectsList: ProjectsListType = [
                 description: "Utilizes NextAuth for secure authentication of authorized users using Google and Github Auth providers."
             },
             {
-                title: "Streamlined Resource Management",
-                description: "Efficient upload, update, and management of study materials using EdgeStore cloud storage."
-            },
-            {
-                title: "Document Download",
-                description: "Easily download PDF documents for offline access."
-            },
-            {
-                title: "Efficient Data Management",
-                description: "Automatically caches query results, reduces redundant network requests, and improves overall application performance using Tanstack Query."
+                title: "Data Source Integration",
+                description: "The calculation is based on life expectancy data from Department of Statistics Malaysia"
             },
             FeatureList.Responsive,
             FeatureList.SEO
