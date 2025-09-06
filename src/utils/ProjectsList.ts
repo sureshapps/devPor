@@ -208,22 +208,24 @@ const FeatureList = {
 
 export const ProjectsList: ProjectsListType = [
     {
-        Name: "ARMS v3",
-        ShortDesc: "An educational platform designed to empower students with easy access to study materials. Students can browse & download PDFs files.",
-        Desc: "ARMS (Academic Resource Management System) is an all-inclusive educational platform designed to empower students with easy access to study materials for their respective subjects. By logging in anonymously, students can conveniently browse and download PDF documents uploaded by authorized faculties. With a centralized approach, ARMS ensures that students can effortlessly find and obtain the necessary resources they need for their academic pursuits. It's a user-friendly solution that streamlines the process of resource management, providing a seamless experience for both students and faculties alike.",
+        Name: "Life Meter",
+        ShortDesc: "Discover Your Estimated Lifespan Based On Your Current Age",
+        Desc: "Life expectancy is the average remaining age (years) for a person is expected to live at the beginning of a certain time, assuming the mortality rate of a certain age is the same throughout his or her lifetime. The Life expectancy calculator is an interactive tool provided for user to measure the average life expectancy based on factors such as birth year.",
         Logo: ArmsLogo,
         Shot: Armsv3Shots,
         Mockup: ARMSv3Mockup,
         Theme: "#FFF",
         Status: "completed",
-        Link: "https://arms-v3.vercel.app/",
-        Source: "https://github.com/ChiragChrg/arms-v3",
-        Tech: [TechInfo.Next, TechInfo.TypeScript, TechInfo.TailwindCSS, TechInfo.ReactQuery, TechInfo.Zustand, TechInfo.MongoDB, TechInfo.NextAuth, TechInfo.EdgeStore],
+        Link: "https://lifemeter.suresh.app/",
+        Source: "https://play.google.com/store/apps/details?id=io.github.sureshapps.app123065",
+        Tech: [TechInfo.Next, TechInfo.TypeScript, TechInfo.TailwindCSS, TechInfo.HTML, TechInfo.JavaScript, TechInfo.PHP],
         features: [
             {
                 title: "Anonymous Login",
                 description: "Students can conveniently  log in anonymously to browse and access study materials."
             },
+
+          
             {
                 title: "Secure Access",
                 description: "Utilizes NextAuth for secure authentication of authorized users using Google and Github Auth providers."
