@@ -102,7 +102,7 @@ body { background-color: #000000; overflow-x: hidden; }
 /*Hero*/
 
 .hero {
-    background: url('home.webp') no-repeat;
+    background: url('https://github.com/sureshapps/devPor/blob/main/public/landing/home.webp?raw=true') no-repeat;
     background-size: cover;
     background-position: top center;
 
