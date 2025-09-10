@@ -7,11 +7,11 @@ import {
 } from "../assets/Logos"
 
 import {
-    NextmartShots, Armsv1Shots, Armsv2Shots, ClimateShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots, VortexaShots, LifeShots
+    NextmartShots, Armsv3Shots, Armsv1Shots, Armsv2Shots, ClimateShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots, VortexaShots, LifeShots
 } from "../assets/Shots"
 
 import {
-    ARMSv1Mockup, ARMSv2Mockup, LifeMockup, ClimateMockup, DaysbeyondMockup, SrinivasMockup, VortexaMockup, XreconMockup, YoatubeMockup
+    ARMSv1Mockup, ARMSv2Mockup, Armsv3Shots, LifeMockup, ClimateMockup, DaysbeyondMockup, SrinivasMockup, VortexaMockup, XreconMockup, YoatubeMockup
 } from "../assets/Mockup"
 
 
