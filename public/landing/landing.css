@@ -102,7 +102,7 @@ body { background-color: #000000; overflow-x: hidden; }
 /*Hero*/
 
 .hero {
-    background: url('home.png') no-repeat;
+    background: url('home.webp') no-repeat;
     background-size: cover;
     background-position: top center;
 
