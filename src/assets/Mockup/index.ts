@@ -1,6 +1,6 @@
 export { default as ARMSv1Mockup } from "./ARMSv1-Mockup.webp"
 export { default as ARMSv2Mockup } from "./ARMSv2-Mockup.webp"
-export { default as ARMSv3Mockup } from "./ARMSv3-Mockup.webp"
+export { default as LifeMockup } from "./Life-Mockup.webp"
 export { default as ClimateMockup } from "./Climate-Mockup.webp"
 export { default as DaysbeyondMockup } from "./Daysbeyond-Mockup.webp"
 export { default as SrinivasMockup } from "./SEM-Mockup.webp"
