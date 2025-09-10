@@ -1,5 +1,5 @@
 export { default as NextmartLogo } from "./NextmartLogo.svg"
-export { default as ArmsLogo } from "./ArmsLogo.svg"
+export { default as LifeLogo } from "./LifeLogo.svg"
 export { default as ArmsPhpLogo } from "./ArmsPhpLogo.svg"
 export { default as ClimateLogo } from "./ClimateLogo.svg"
 export { default as CookeezLogo } from "./CookeezLogo.svg"
